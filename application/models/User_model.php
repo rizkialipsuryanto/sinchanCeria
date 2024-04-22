@@ -141,17 +141,17 @@ class User_model  extends CI_Model
     public function insertdailyRecords($input)
     {
 
-        $waktu_awal        =strtotime("".$input['tanggal']." ".$input['jam_mulai'].":00");
-        $waktu_akhir    =strtotime("".$input['tanggal']." ".$input['jam_selesai'].":00"); // bisa juga waktu sekarang now()
+        // $waktu_awal        =strtotime("".$input['tanggal']." ".$input['jam_mulai'].":00");
+        // $waktu_akhir    =strtotime("".$input['tanggal']." ".$input['jam_selesai'].":00"); // bisa juga waktu sekarang now()
             
             //menghitung selisih dengan hasil detik
-        $diff    =$waktu_akhir - $waktu_awal;
+        // $diff    =$waktu_akhir - $waktu_awal;
             
             //membagi detik menjadi jam
-        $jam    =floor($diff / (60 * 60));
+        // $jam    =floor($diff / (60 * 60));
             
             //membagi sisa detik setelah dikurangi $jam menjadi menit
-        $menit    =$diff - $jam * (60 * 60);
+        // $menit    =$diff - $jam * (60 * 60);
 
             //menampilkan / print hasil
         // echo 'Hasilnya adalah '.number_format($menit,0,",",".").' menit<br /><br />';
@@ -159,17 +159,17 @@ class User_model  extends CI_Model
         // $detik = number_format($diff,0,",",".");
 
         $data["tanggal"]           = $input['tanggal'];
-        $data["jam_mulai"]           = $input['jam_mulai'];
-        $data["id_tasks_detail"]           = $input['tasks'];
-        $data["jam_selesai"]           = $input['jam_selesai'];
-        $data["durasi"]           = $menit;
+        // $data["jam_mulai"]           = $input['jam_mulai'];
+        $data["id_tupoksi"]           = $input['tupoksi'];
+        // $data["jam_selesai"]           = $input['jam_selesai'];
+        // $data["durasi"]           = $menit;
         $data["catatan"]           = $input['catatan_harian'];
         $data["jumlah"]           = $input['jumlah'];
         $data["satuan"]           = $input['satuan'];
         $data["created_at"]           = date("Y-m-d H:i:s");
-        $data["created_by"]           = $input['user_input'];
+        $data["uid"]           = $input['user_input'];
         
-        $this->db->insert('dailyrecords',$data);
+        $this->db->insert('catatan_harian',$data);
     }
 
     public function updatedailyRecords($input)

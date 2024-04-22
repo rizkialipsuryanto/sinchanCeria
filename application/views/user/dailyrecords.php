@@ -53,7 +53,7 @@ $this->session->unset_userdata('register_nama');
                                                 <option value=""> -- Tupoksi -- </option>
                                                 <?php if (!empty($tupoksi)) : ?>
                                                     <?php foreach ($tupoksi as $pl) : ?>
-                                                        <option value="<?= $pl['id']; ?>"> <?= $pl['tupoksi']; ?></option>
+                                                        <option value="<?= $pl['id_tupoksi']; ?>"> <?= $pl['tupoksi']; ?></option>
                                                     <?php endforeach ?>
                                                 <?php endif ?>
                                             </select>
@@ -117,7 +117,7 @@ $this->session->unset_userdata('register_nama');
                                             <div class="input-group-addon">
                                                 <i class="fa fa-pencil"></i>
                                             </div>
-                                                <input type="text" class="form-control pull-right input-sm" name="catatan_harian" required>
+                                                <input type="text" class="form-control pull-right input-sm" id="catatan_harian" name="catatan_harian" required>
                                         </div>
                                     </div>
                                 </div>

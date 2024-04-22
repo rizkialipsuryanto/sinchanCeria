@@ -10,7 +10,7 @@ class User extends CI_Controller
         // is_logged_in();
 
         $this->load->model('User_model', 'user');
-        $this->load->model('Pegawai_model', 'pegawai');
+        // $this->load->model('Pegawai_model', 'pegawai');
         $this->load->model('Master_model', 'master');
 
         $this->load->helper('pendaftaran');
